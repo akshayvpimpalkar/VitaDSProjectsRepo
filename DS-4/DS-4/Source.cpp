@@ -190,6 +190,32 @@ public:
 		return true;
 	}
 
+	void deleteAllNodes() {
+		/*for (Node *current = head->next; current; current = head->next) {
+			current->next->prev = current->prev;
+			current->prev->next = current->next;
+
+			delete current;
+		}*/
+		/*Node *t2;
+		for (Node *current = head->next; current; current = t2) {
+		Node *temp = new Node(0);
+		temp = current;
+		t2 = current->next;
+		delete current;
+		}
+
+		head->next = tail;
+		tail->prev = head;*/
+		Node *temp = head;
+		while (head) {
+			head = head->next;
+			delete temp;
+			temp = head;
+		}		
+		cout << "\ndeleted all nodes!"<<endl;
+	}
+
 };
 
 int main()
@@ -226,4 +252,5 @@ int main()
 	m1.addToFront(67);
 	cout << "\n";
 	m1.print();
+	m1.deleteAllNodes();
 }
