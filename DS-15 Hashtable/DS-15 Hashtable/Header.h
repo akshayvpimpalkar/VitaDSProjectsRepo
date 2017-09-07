@@ -49,7 +49,7 @@ public:
 		current = new HashEntry <type, type2>(k, v);
 		current->next = table[offset];
 		table[offset] = current;
-		cout << v << " added with key as " <<k<< endl;
+		cout << v << " added" <<endl;
 		return true;
 	}
 
